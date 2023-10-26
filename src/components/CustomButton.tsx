@@ -6,9 +6,11 @@ const CustomButton = ({
 	title,
 	customStyles,
 	clickHandler,
+	type,
 }: CustomButtonProps) => {
 	return (
 		<button
+			type={type || 'button'}
 			className={`py-3 px-6 rounded-full ${customStyles}`}
 			onClick={clickHandler}
 		>

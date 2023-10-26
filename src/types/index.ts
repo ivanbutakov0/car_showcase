@@ -4,4 +4,5 @@ export interface CustomButtonProps {
 	title: string
 	customStyles?: string
 	clickHandler?: MouseEventHandler<HTMLButtonElement>
+	type?: 'button' | 'submit'
 }
