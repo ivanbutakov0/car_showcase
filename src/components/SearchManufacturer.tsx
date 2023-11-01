@@ -26,7 +26,7 @@ const SearchManufacturer = ({
 	return (
 		<div className='relative'>
 			<Combobox value={manufacturer} onChange={setManufacturer}>
-				<div className='flex items-center gap-3'>
+				<div className='flex items-center gap-3 h-10'>
 					<Combobox.Button className='pl-6 text-gray-600'>
 						<SiVolkswagen />
 					</Combobox.Button>

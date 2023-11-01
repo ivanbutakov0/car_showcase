@@ -15,7 +15,7 @@ export default async function Home() {
 					<p className='text-gray-700'>Explore out cars you might like</p>
 				</div>
 
-				<div className='flex justify-between '>
+				<div className='flex justify-between flex-wrap'>
 					<SearchBar />
 
 					<div>
