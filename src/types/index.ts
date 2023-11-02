@@ -36,3 +36,25 @@ export interface CarCardProps {
 	drive: string
 	cityMPG: number
 }
+
+export interface FilterProps {
+	manufacturer: string
+	year: number
+	fuel: string
+	limit: number
+	model: string
+}
+
+export interface HomeProps {
+	searchParams: FilterProps
+}
+
+export interface CustomFilterProps {
+	title: string
+	options: OptionProps[]
+}
+
+export interface OptionProps {
+	title: string
+	value: string
+}

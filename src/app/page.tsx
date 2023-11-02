@@ -1,8 +1,16 @@
 import { CarCard, CustomFilter, Hero, SearchBar } from '@/components'
+import { fuels, yearsOfProduction } from '@/constants'
+import { HomeProps } from '@/types'
 import { fetchCars } from '@/utils'
 
-export default async function Home() {
-	const allCars = await fetchCars()
+export default async function Home({ searchParams }: HomeProps) {
+	const allCars = await fetchCars({
+		manufacturer: searchParams.manufacturer || '',
+		year: searchParams.year || 2022,
+		fuel: searchParams.fuel || '',
+		limit: searchParams.limit || 10,
+		model: searchParams.model || '',
+	})
 
 	const isDataEmpty = allCars.length < 1 || !allCars || !Array.isArray(allCars)
 
@@ -15,12 +23,12 @@ export default async function Home() {
 					<p className='text-gray-700'>Explore out cars you might like</p>
 				</div>
 
-				<div className='flex justify-between flex-wrap'>
+				<div className='flex justify-between flex-wrap gap-3'>
 					<SearchBar />
 
-					<div>
-						<CustomFilter />
-						<CustomFilter />
+					<div className='flex flex-wrap gap-3'>
+						<CustomFilter title='fuel' options={fuels} />
+						<CustomFilter title='year' options={yearsOfProduction} />
 					</div>
 				</div>
 
