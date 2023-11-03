@@ -1,4 +1,4 @@
-import { CarCard, CustomFilter, Hero, SearchBar } from '@/components'
+import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from '@/components'
 import { fuels, yearsOfProduction } from '@/constants'
 import { HomeProps } from '@/types'
 import { fetchCars } from '@/utils'
@@ -34,10 +34,13 @@ export default async function Home({ searchParams }: HomeProps) {
 
 				{!isDataEmpty ? (
 					<section>
-						<div className='grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2  grid-cols-1 gap-8 pt-14'>
+						<div className='grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2  grid-cols-1 gap-8 pt-14 mb-5'>
 							{allCars.map((car, index) => (
 								<CarCard car={car} key={index} />
 							))}
+						</div>
+						<div className=' flex justify-center'>
+							<ShowMore />
 						</div>
 					</section>
 				) : (
